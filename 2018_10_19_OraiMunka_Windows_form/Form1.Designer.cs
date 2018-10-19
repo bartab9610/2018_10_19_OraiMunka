@@ -38,7 +38,7 @@
             this.RadioButton_no = new System.Windows.Forms.RadioButton();
             this.GroupBox_hobbi = new System.Windows.Forms.GroupBox();
             this.Label_kedvenc_hobbi = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Combobox_hobbik = new System.Windows.Forms.ComboBox();
             this.Label_uj_hobbi = new System.Windows.Forms.Label();
             this.TextBox_uj_hobbi = new System.Windows.Forms.TextBox();
             this.Button_hobbi_hozzaadas = new System.Windows.Forms.Button();
@@ -137,7 +137,7 @@
             this.GroupBox_hobbi.Controls.Add(this.Button_hobbi_hozzaadas);
             this.GroupBox_hobbi.Controls.Add(this.TextBox_uj_hobbi);
             this.GroupBox_hobbi.Controls.Add(this.Label_uj_hobbi);
-            this.GroupBox_hobbi.Controls.Add(this.comboBox1);
+            this.GroupBox_hobbi.Controls.Add(this.Combobox_hobbik);
             this.GroupBox_hobbi.Controls.Add(this.Label_kedvenc_hobbi);
             this.GroupBox_hobbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GroupBox_hobbi.Location = new System.Drawing.Point(12, 114);
@@ -156,18 +156,18 @@
             this.Label_kedvenc_hobbi.TabIndex = 0;
             this.Label_kedvenc_hobbi.Text = "Kedvenc hobbi:";
             // 
-            // comboBox1
+            // Combobox_hobbik
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Combobox_hobbik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Combobox_hobbik.FormattingEnabled = true;
+            this.Combobox_hobbik.Items.AddRange(new object[] {
             "Úszás",
             "Bicikli",
             "Labdarúgás"});
-            this.comboBox1.Location = new System.Drawing.Point(19, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(123, 21);
-            this.comboBox1.TabIndex = 1;
+            this.Combobox_hobbik.Location = new System.Drawing.Point(19, 49);
+            this.Combobox_hobbik.Name = "Combobox_hobbik";
+            this.Combobox_hobbik.Size = new System.Drawing.Size(123, 21);
+            this.Combobox_hobbik.TabIndex = 1;
             // 
             // Label_uj_hobbi
             // 
@@ -192,6 +192,7 @@
             this.Button_hobbi_hozzaadas.TabIndex = 4;
             this.Button_hobbi_hozzaadas.Text = "Hozzáadás";
             this.Button_hobbi_hozzaadas.UseVisualStyleBackColor = true;
+            this.Button_hobbi_hozzaadas.Click += new System.EventHandler(this.Button_hobbi_hozzaadas_Click);
             // 
             // Button_save
             // 
@@ -202,6 +203,7 @@
             this.Button_save.TabIndex = 4;
             this.Button_save.Text = "Mentés";
             this.Button_save.UseVisualStyleBackColor = true;
+            this.Button_save.Click += new System.EventHandler(this.Button_save_Click);
             // 
             // Button_open
             // 
@@ -246,7 +248,7 @@
         private System.Windows.Forms.DateTimePicker DateTimePicker_szul_datum;
         private System.Windows.Forms.GroupBox GroupBox_hobbi;
         private System.Windows.Forms.Label Label_kedvenc_hobbi;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Combobox_hobbik;
         private System.Windows.Forms.Button Button_hobbi_hozzaadas;
         private System.Windows.Forms.TextBox TextBox_uj_hobbi;
         private System.Windows.Forms.Label Label_uj_hobbi;
