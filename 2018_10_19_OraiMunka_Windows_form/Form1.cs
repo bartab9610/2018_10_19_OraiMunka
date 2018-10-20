@@ -23,29 +23,34 @@ namespace _2018_10_19_OraiMunka_Windows_form
         {
             if (Combobox_hobbik.Items.Contains(TextBox_uj_hobbi.Text))
             {
-                MessageBox.Show("A \"" + TextBox_uj_hobbi.Text +  "\" elem már létezik");
+                MessageBox.Show("A \"" + TextBox_uj_hobbi.Text + "\" elem már létezik");
             }
             else
             {
                 Combobox_hobbik.Items.Add(TextBox_uj_hobbi.Text);
-                
+
             }
         }
 
         private void Button_save_Click(object sender, EventArgs e)
         {
-            Fajlkiiras.WriteLine(Label_nev.Text + ";" + TextBox_nev.Text);
-            Fajlkiiras.WriteLine(Label_szuletesi_datum.Text + ";" + DateTimePicker_szul_datum.Value);
+            Fajlkiiras.WriteLine("Név" + ";" + "SzületésiDátum" + ";" + "Neme" + ";" + "KedvencHobbi;");
+            Fajlkiiras.Write(TextBox_nev.Text + ";" +
+                                    DateTimePicker_szul_datum.Value.Year + "." +
+                                    DateTimePicker_szul_datum.Value.Month + "." +
+                                    DateTimePicker_szul_datum.Value.Day + ";"
+                             );
             if (RadioButton_ferfi.Checked == true)
             {
-                Fajlkiiras.WriteLine(Label_nem.Text + ";" + RadioButton_ferfi.Text);
+                Fajlkiiras.Write(RadioButton_ferfi.Text + ";");
             }
             else if (RadioButton_no.Checked == true)
             {
-                Fajlkiiras.WriteLine(Label_nem.Text + ";" + RadioButton_no.Text);
+                Fajlkiiras.Write(RadioButton_no.Text + ";");
             }
+            Fajlkiiras.Write(Combobox_hobbik.SelectedItem + ";");
             Fajlkiiras.Close();
-            this.Close();
+            // this.Close();
         }
     }
 }
