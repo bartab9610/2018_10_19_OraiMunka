@@ -44,6 +44,8 @@
             this.Label_kedvenc_hobbi = new System.Windows.Forms.Label();
             this.Button_save = new System.Windows.Forms.Button();
             this.Button_open = new System.Windows.Forms.Button();
+            this.OpenFileDialog_megnyitas = new System.Windows.Forms.OpenFileDialog();
+            this.SaveFileDialog_mentes = new System.Windows.Forms.SaveFileDialog();
             this.GroupBox_adatok.SuspendLayout();
             this.GroupBox_hobbi.SuspendLayout();
             this.SuspendLayout();
@@ -52,10 +54,9 @@
             // 
             this.Label_nev.AutoSize = true;
             this.Label_nev.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label_nev.Location = new System.Drawing.Point(21, 31);
-            this.Label_nev.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_nev.Location = new System.Drawing.Point(16, 25);
             this.Label_nev.Name = "Label_nev";
-            this.Label_nev.Size = new System.Drawing.Size(41, 17);
+            this.Label_nev.Size = new System.Drawing.Size(34, 13);
             this.Label_nev.TabIndex = 0;
             this.Label_nev.Text = "Név:";
             // 
@@ -63,10 +64,9 @@
             // 
             this.Label_szuletesi_datum.AutoSize = true;
             this.Label_szuletesi_datum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label_szuletesi_datum.Location = new System.Drawing.Point(21, 59);
-            this.Label_szuletesi_datum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_szuletesi_datum.Location = new System.Drawing.Point(16, 48);
             this.Label_szuletesi_datum.Name = "Label_szuletesi_datum";
-            this.Label_szuletesi_datum.Size = new System.Drawing.Size(128, 17);
+            this.Label_szuletesi_datum.Size = new System.Drawing.Size(100, 13);
             this.Label_szuletesi_datum.TabIndex = 1;
             this.Label_szuletesi_datum.Text = "Születési dátum:";
             // 
@@ -82,11 +82,9 @@
             this.GroupBox_adatok.Controls.Add(this.Label_nev);
             this.GroupBox_adatok.Controls.Add(this.Label_szuletesi_datum);
             this.GroupBox_adatok.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GroupBox_adatok.Location = new System.Drawing.Point(16, 15);
-            this.GroupBox_adatok.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupBox_adatok.Location = new System.Drawing.Point(12, 12);
             this.GroupBox_adatok.Name = "GroupBox_adatok";
-            this.GroupBox_adatok.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.GroupBox_adatok.Size = new System.Drawing.Size(471, 118);
+            this.GroupBox_adatok.Size = new System.Drawing.Size(359, 96);
             this.GroupBox_adatok.TabIndex = 2;
             this.GroupBox_adatok.TabStop = false;
             this.GroupBox_adatok.Text = "Adatok";
@@ -94,10 +92,10 @@
             // RadioButton_no
             // 
             this.RadioButton_no.AutoSize = true;
-            this.RadioButton_no.Location = new System.Drawing.Point(321, 86);
-            this.RadioButton_no.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RadioButton_no.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RadioButton_no.Location = new System.Drawing.Point(241, 70);
             this.RadioButton_no.Name = "RadioButton_no";
-            this.RadioButton_no.Size = new System.Drawing.Size(49, 21);
+            this.RadioButton_no.Size = new System.Drawing.Size(41, 17);
             this.RadioButton_no.TabIndex = 6;
             this.RadioButton_no.TabStop = true;
             this.RadioButton_no.Text = "Nő";
@@ -105,11 +103,12 @@
             // 
             // RadioButton_ferfi
             // 
+            this.RadioButton_ferfi.AllowDrop = true;
             this.RadioButton_ferfi.AutoSize = true;
-            this.RadioButton_ferfi.Location = new System.Drawing.Point(200, 86);
-            this.RadioButton_ferfi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RadioButton_ferfi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RadioButton_ferfi.Location = new System.Drawing.Point(150, 70);
             this.RadioButton_ferfi.Name = "RadioButton_ferfi";
-            this.RadioButton_ferfi.Size = new System.Drawing.Size(62, 21);
+            this.RadioButton_ferfi.Size = new System.Drawing.Size(50, 17);
             this.RadioButton_ferfi.TabIndex = 5;
             this.RadioButton_ferfi.TabStop = true;
             this.RadioButton_ferfi.Text = "Férfi";
@@ -117,27 +116,24 @@
             // 
             // DateTimePicker_szul_datum
             // 
-            this.DateTimePicker_szul_datum.Location = new System.Drawing.Point(169, 54);
-            this.DateTimePicker_szul_datum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DateTimePicker_szul_datum.Location = new System.Drawing.Point(127, 44);
             this.DateTimePicker_szul_datum.Name = "DateTimePicker_szul_datum";
-            this.DateTimePicker_szul_datum.Size = new System.Drawing.Size(294, 23);
+            this.DateTimePicker_szul_datum.Size = new System.Drawing.Size(222, 20);
             this.DateTimePicker_szul_datum.TabIndex = 4;
             // 
             // TextBox_nev
             // 
-            this.TextBox_nev.Location = new System.Drawing.Point(169, 23);
-            this.TextBox_nev.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_nev.Location = new System.Drawing.Point(127, 19);
             this.TextBox_nev.Name = "TextBox_nev";
-            this.TextBox_nev.Size = new System.Drawing.Size(294, 23);
+            this.TextBox_nev.Size = new System.Drawing.Size(222, 20);
             this.TextBox_nev.TabIndex = 3;
             // 
             // Label_nem
             // 
             this.Label_nem.AutoSize = true;
-            this.Label_nem.Location = new System.Drawing.Point(21, 89);
-            this.Label_nem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_nem.Location = new System.Drawing.Point(16, 72);
             this.Label_nem.Name = "Label_nem";
-            this.Label_nem.Size = new System.Drawing.Size(54, 17);
+            this.Label_nem.Size = new System.Drawing.Size(43, 13);
             this.Label_nem.TabIndex = 2;
             this.Label_nem.Text = "Neme:";
             // 
@@ -149,21 +145,18 @@
             this.GroupBox_hobbi.Controls.Add(this.Combobox_hobbik);
             this.GroupBox_hobbi.Controls.Add(this.Label_kedvenc_hobbi);
             this.GroupBox_hobbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GroupBox_hobbi.Location = new System.Drawing.Point(16, 140);
-            this.GroupBox_hobbi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupBox_hobbi.Location = new System.Drawing.Point(12, 114);
             this.GroupBox_hobbi.Name = "GroupBox_hobbi";
-            this.GroupBox_hobbi.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.GroupBox_hobbi.Size = new System.Drawing.Size(267, 183);
+            this.GroupBox_hobbi.Size = new System.Drawing.Size(209, 149);
             this.GroupBox_hobbi.TabIndex = 3;
             this.GroupBox_hobbi.TabStop = false;
             this.GroupBox_hobbi.Text = "Hobbi";
             // 
             // Button_hobbi_hozzaadas
             // 
-            this.Button_hobbi_hozzaadas.Location = new System.Drawing.Point(80, 142);
-            this.Button_hobbi_hozzaadas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_hobbi_hozzaadas.Location = new System.Drawing.Point(60, 115);
             this.Button_hobbi_hozzaadas.Name = "Button_hobbi_hozzaadas";
-            this.Button_hobbi_hozzaadas.Size = new System.Drawing.Size(109, 28);
+            this.Button_hobbi_hozzaadas.Size = new System.Drawing.Size(82, 23);
             this.Button_hobbi_hozzaadas.TabIndex = 4;
             this.Button_hobbi_hozzaadas.Text = "Hozzáadás";
             this.Button_hobbi_hozzaadas.UseVisualStyleBackColor = true;
@@ -171,18 +164,16 @@
             // 
             // TextBox_uj_hobbi
             // 
-            this.TextBox_uj_hobbi.Location = new System.Drawing.Point(111, 103);
-            this.TextBox_uj_hobbi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_uj_hobbi.Location = new System.Drawing.Point(83, 84);
             this.TextBox_uj_hobbi.Name = "TextBox_uj_hobbi";
-            this.TextBox_uj_hobbi.Size = new System.Drawing.Size(147, 23);
+            this.TextBox_uj_hobbi.Size = new System.Drawing.Size(111, 20);
             this.TextBox_uj_hobbi.TabIndex = 3;
             // 
             // Label_uj_hobbi
             // 
-            this.Label_uj_hobbi.Location = new System.Drawing.Point(25, 107);
-            this.Label_uj_hobbi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_uj_hobbi.Location = new System.Drawing.Point(19, 87);
             this.Label_uj_hobbi.Name = "Label_uj_hobbi";
-            this.Label_uj_hobbi.Size = new System.Drawing.Size(77, 18);
+            this.Label_uj_hobbi.Size = new System.Drawing.Size(58, 15);
             this.Label_uj_hobbi.TabIndex = 2;
             this.Label_uj_hobbi.Text = "Új hobbi:";
             // 
@@ -194,29 +185,26 @@
             "Úszás",
             "Bicikli",
             "Labdarúgás"});
-            this.Combobox_hobbik.Location = new System.Drawing.Point(25, 60);
-            this.Combobox_hobbik.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Combobox_hobbik.Location = new System.Drawing.Point(19, 49);
             this.Combobox_hobbik.Name = "Combobox_hobbik";
-            this.Combobox_hobbik.Size = new System.Drawing.Size(163, 25);
+            this.Combobox_hobbik.Size = new System.Drawing.Size(136, 21);
             this.Combobox_hobbik.TabIndex = 1;
             // 
             // Label_kedvenc_hobbi
             // 
             this.Label_kedvenc_hobbi.AutoSize = true;
-            this.Label_kedvenc_hobbi.Location = new System.Drawing.Point(21, 31);
-            this.Label_kedvenc_hobbi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_kedvenc_hobbi.Location = new System.Drawing.Point(16, 25);
             this.Label_kedvenc_hobbi.Name = "Label_kedvenc_hobbi";
-            this.Label_kedvenc_hobbi.Size = new System.Drawing.Size(120, 17);
+            this.Label_kedvenc_hobbi.Size = new System.Drawing.Size(96, 13);
             this.Label_kedvenc_hobbi.TabIndex = 0;
             this.Label_kedvenc_hobbi.Text = "Kedvenc hobbi:";
             // 
             // Button_save
             // 
             this.Button_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_save.Location = new System.Drawing.Point(347, 192);
-            this.Button_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_save.Location = new System.Drawing.Point(260, 156);
             this.Button_save.Name = "Button_save";
-            this.Button_save.Size = new System.Drawing.Size(100, 28);
+            this.Button_save.Size = new System.Drawing.Size(75, 23);
             this.Button_save.TabIndex = 4;
             this.Button_save.Text = "Mentés";
             this.Button_save.UseVisualStyleBackColor = true;
@@ -225,26 +213,34 @@
             // Button_open
             // 
             this.Button_open.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_open.Location = new System.Drawing.Point(347, 245);
-            this.Button_open.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_open.Location = new System.Drawing.Point(260, 199);
             this.Button_open.Name = "Button_open";
-            this.Button_open.Size = new System.Drawing.Size(100, 28);
+            this.Button_open.Size = new System.Drawing.Size(75, 23);
             this.Button_open.TabIndex = 5;
             this.Button_open.Text = "Betöltés";
             this.Button_open.UseVisualStyleBackColor = true;
+            this.Button_open.Click += new System.EventHandler(this.Button_open_Click);
+            // 
+            // OpenFileDialog_megnyitas
+            // 
+            this.OpenFileDialog_megnyitas.FileName = "openFileDialog1";
+            this.OpenFileDialog_megnyitas.Filter = "Szöveges fájl(.txt)|*.txt|Minden fájl|*.*";
+            // 
+            // SaveFileDialog_mentes
+            // 
+            this.SaveFileDialog_mentes.Filter = "Szöveges fájl(.txt)|.txt|Minden fájl|*.*";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 338);
+            this.ClientSize = new System.Drawing.Size(383, 277);
             this.Controls.Add(this.Button_open);
             this.Controls.Add(this.Button_save);
             this.Controls.Add(this.GroupBox_hobbi);
             this.Controls.Add(this.GroupBox_adatok);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(522, 385);
+            this.MinimumSize = new System.Drawing.Size(399, 316);
             this.Name = "Form1";
             this.Text = "Form1";
             this.GroupBox_adatok.ResumeLayout(false);
@@ -273,6 +269,8 @@
         private System.Windows.Forms.Label Label_uj_hobbi;
         private System.Windows.Forms.Button Button_save;
         private System.Windows.Forms.Button Button_open;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog_megnyitas;
+        private System.Windows.Forms.SaveFileDialog SaveFileDialog_mentes;
     }
 }
 
