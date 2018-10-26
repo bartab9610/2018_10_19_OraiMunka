@@ -22,27 +22,35 @@ namespace _2018_10_19_OraiMunka_Windows_form
 
         public void Mentes()
         {
-            string Kezdes = "Név" + ";" + "SzületésiDátum" + ";" + "Neme" + ";" + "KedvencHobbi;" + Environment.NewLine;
-            string Radio_nem_String = "";
-            if (RadioButton_ferfi.Checked == true)
+            string Kezdes = "Név;" + "SzületésiDátum;" + "Neme;" + "KedvencHobbi;" + Environment.NewLine;
+            if ((!String.IsNullOrEmpty(TextBox_nev.Text)) && !String.IsNullOrEmpty(Convert.ToString(RadioButton_ferfi.Checked)) && !String.IsNullOrEmpty(Convert.ToString(RadioButton_no.Checked)) && !String.IsNullOrEmpty(Convert.ToString(Combobox_hobbik.SelectedItem)))
             {
-                Radio_nem_String = RadioButton_ferfi.Text;
+                string Radio_nem_String = "";
+                if (RadioButton_ferfi.Checked == true)
+                {
+                    Radio_nem_String = RadioButton_ferfi.Text;
+                }
+                else if (RadioButton_no.Checked == true)
+                {
+                    Radio_nem_String = RadioButton_no.Text;
+                }
+                string tartalom = Kezdes +
+                                    TextBox_nev.Text + ";" +
+                                    DateTimePicker_szul_datum.Value.Year + "." + DateTimePicker_szul_datum.Value.Month + "." + DateTimePicker_szul_datum.Value.Day + ";" +
+                                    Radio_nem_String + ";" +
+                                    Combobox_hobbik.SelectedItem + ";";
+                SaveFileDialog_mentes.FileName = "";
+                var eredmeny = SaveFileDialog_mentes.ShowDialog(this);
+                if (eredmeny == DialogResult.OK)
+                {
+                    string Fajl_nev = SaveFileDialog_mentes.FileName;
+                    File.WriteAllText(Fajl_nev, tartalom);
+                }
+                this.Close();
             }
-            else if (RadioButton_no.Checked == true)
+            else
             {
-                Radio_nem_String = RadioButton_no.Text;
-            }
-            string tartalom = Kezdes +
-                                TextBox_nev.Text + ";" +
-                                DateTimePicker_szul_datum.Value.Year + "." + DateTimePicker_szul_datum.Value.Month + "." + DateTimePicker_szul_datum.Value.Day + ";" +
-                                Radio_nem_String + ";" +
-                                Combobox_hobbik.SelectedItem + ";";
-            SaveFileDialog_mentes.FileName = "";
-            var eredmeny = SaveFileDialog_mentes.ShowDialog(this);
-            if (eredmeny == DialogResult.OK)
-            {
-                string Fajl_nev = SaveFileDialog_mentes.FileName;
-                File.WriteAllText(Fajl_nev, tartalom);
+                MessageBox.Show("Minden bemenetnek értéke kell lennie!");
             }
         }
         public void Megnyitas()
@@ -73,7 +81,7 @@ namespace _2018_10_19_OraiMunka_Windows_form
                     Combobox_hobbik.SelectedItem = adatok[3];
                 }
             }
-            
+
         }
         private void Button_hobbi_hozzaadas_Click(object sender, EventArgs e)
         {
@@ -112,7 +120,6 @@ namespace _2018_10_19_OraiMunka_Windows_form
             Fajlkiiras.WriteLine();
             Fajlkiiras.Close();*/
             Mentes();
-            this.Close();
         }
 
         private void Button_open_Click(object sender, EventArgs e)

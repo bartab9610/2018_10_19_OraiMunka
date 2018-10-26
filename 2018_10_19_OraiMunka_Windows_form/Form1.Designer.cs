@@ -228,6 +228,7 @@
             // 
             // SaveFileDialog_mentes
             // 
+            this.SaveFileDialog_mentes.DefaultExt = "txt";
             this.SaveFileDialog_mentes.Filter = "Szöveges fájl(.txt)|.txt|Minden fájl|*.*";
             // 
             // Form1
